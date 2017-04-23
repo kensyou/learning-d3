@@ -11,7 +11,7 @@
 var path = require('path');
 module.exports = {
   entry: {
-    app: ['./src/index.js'] // This is the main file that gets loaded first; the "bootstrap", if you will.
+    app: ['./src/index.ts'] // This is the main file that gets loaded first; the "bootstrap", if you will.
   },
   output: { // Transpiled and bundled output gets put in `build/bundle.js`.
     path: path.resolve(__dirname, 'build'),
@@ -22,14 +22,16 @@ module.exports = {
   // This makes it easier to debug scripts by listing line number of whichever file
   // threw the exception or console.log or whathaveyounot.
   devtool: 'inline-source-map',
-
+  resolve: {
+    extensions: [".ts", ".js"]
+  },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js?$/, // Another convention is to use the .es6 filetype, but you then
+        test: /\.ts?$/, // Another convention is to use the .es6 filetype, but you then
                         // have to supply that explicitly in import statements, which isn't cool.
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
+        loader: 'awesome-typescript-loader'
       },
       // This nifty bit of magic right here allows us to load entire JSON files
       // synchronously using `require`, just like in NodeJS.
