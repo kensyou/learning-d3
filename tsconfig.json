@@ -6,6 +6,7 @@
         "sourceMap": false,
         "alwaysStrict": true,
         "experimentalDecorators": true,
+        "strictNullChecks": true,
         "types": [
             // add node as an option
             "node"

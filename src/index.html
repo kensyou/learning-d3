@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <title>A title</title>
-<div>
-    <p>A paragraph of text</p>
-</div>
-<ul>
-    <li>List item</li>
-    <li>List item 2, <em><strong>italic</strong></em></li>
-</ul>
-
-<div id="chart"></div>
-<script src="/assets/bundle.js"></script>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #002732;
+}
+</style>
+<body>
+    <div id="map" style="width: 960px; height: 500px"></div>
+    <div id="chart"></div>
+    <script src="/assets/bundle.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=places&amp;key=AIzaSyC62R0j23s1c-JzP6Gd3Q7UC5mDykuG-gc&amp;callback=initMap"></script>
+</body>

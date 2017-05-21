@@ -11,7 +11,8 @@ export class BasicBarChart extends BasicChart {
         let xAxis = d3.axisBottom(x);
         let yAxis = d3.axisLeft(y);
         x.domain(data.map((d) => d.name));
-        y.domain([0, d3.max(data, (d: type1) => d.population)]);
+        let yy = <number>d3.max(data, (d: type1) => d.population);
+        y.domain([0, yy]);
         this.chart.append('g')
             .attr('class', 'axis')
             .attr('transform', `translate(0, ${this.height})`)
